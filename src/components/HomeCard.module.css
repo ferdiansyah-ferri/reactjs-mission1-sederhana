@@ -1,0 +1,98 @@
+.HomeCard {
+
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    width: 80%;
+    transform: translate(12%, 20%);
+}
+
+.HomeCard .Card {
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 30%;
+    padding: 10px 10px 1px 10px;
+    border-radius: 10px;
+}
+
+.HomeCard .Card .gambar {
+    width: 240px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.HomeCard .Card .avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.cardImage {
+    margin-top: 10px;
+    display: flex;
+}
+
+.cardImage ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.cardImage ul span {
+    font-weight: bold;
+}
+
+.cardImage ul li p {
+    font-size: 0.7rem;
+    padding-top: -3px;
+}
+
+.HomeCard .Harga {
+    color: blue;
+    font-weight: bold;
+    position: absolute;
+    font-size: 1rem;
+    right: 0;
+
+}
+
+.Icon {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+
+}
+
+@media screen and (max-width: 1000px) {
+    .HomeCard .Card .gambar {
+
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .HomeCard {
+        width: 90%;
+        transform: translate(6%, 20%);
+    }
+
+}
+
+@media screen and (max-width: 690px) {
+    .HomeCard .Card {
+        width: 100%;
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .HomeCard {
+
+        font-size: 15px;
+        /* margin-bottom: 10px; */
+        transform: translate(5%, 5%);
+    }
+}

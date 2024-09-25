@@ -1,0 +1,187 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.Container {
+    width: 100%;
+    /* background-color: linear-gradient(62deg, #8c5efc 0%, #e0c3fc 100%); */
+    z-index: 999;
+    background-color: #fff;
+    position: fixed;
+    margin-bottom: 50px;
+    top: 0;
+}
+
+.Container .NavbarHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.Container h2 {
+    color: rgb(209, 144, 23)
+}
+
+
+.Container a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 5px;
+
+
+}
+
+.Container .image {
+    display: flex;
+    margin-left: 100px;
+
+}
+
+.Container img {
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin: 2px 0;
+}
+
+.Container ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 150%;
+}
+
+.Container ul li a:hover {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.Container .NavbarHeader .menuToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: relative;
+}
+
+.Container .NavbarHeader .menuToggle input {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -2px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+.Container .NavbarHeader .menuToggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin-right: 2px;
+    padding-left: 2px;
+    background-color: rgb(33, 35, 40);
+    border-radius: 5px;
+    transition: all 0.5s;
+
+
+}
+
+.Container .NavbarHeader .menuToggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.Container .NavbarHeader .menuToggle input:checked~span:nth-child(2) {
+    background-color: red;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.Container .NavbarHeader .menuToggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.Container .NavbarHeader .menuToggle input:checked~span:nth-child(4) {
+    background-color: red;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.Container .NavbarHeader .menuToggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.Container .NavbarHeader .kategori {
+
+    padding: 2px;
+
+
+}
+
+
+
+
+
+/* Media Query */
+
+
+
+@media screen and (max-width: 1200px) {
+
+    .Container {
+        padding: 0px 10px;
+    }
+
+    .Container .NavbarHeader ul {
+        width: 120%;
+
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .Container .NavbarHeader .menuToggle {
+        display: flex;
+        margin: auto;
+    }
+
+    .Container .NavbarHeader ul {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        background-color: white;
+        height: 300px;
+        width: 50%;
+        align-items: center;
+        justify-content: space-evenly;
+        transition: all 1s;
+
+
+    }
+
+    .Container .NavbarHeader .showMenu {
+        display: flex;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .Container .NavbarHeader .hideMenu {
+        display: none;
+    }
+
+
+
+}
+
+@media screen and (max-width:450px) {
+    .Container .image {
+        margin: 0;
+    }
+}

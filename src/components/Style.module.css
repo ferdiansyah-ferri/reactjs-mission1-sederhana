@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #8c5efc;
+    background-image: linear-gradient(62deg, #8c5efc 0%, #e0c3fc 100%);
+    overflow-x: hidden;
+    height: 100vh;
+    /* min-height: 240%;  */
+    /* max-height: 240%; */
+
+}
+
+.LoginForm {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -5px;
+    /* margin-top: 20px; */
+
+
+}
+
+.LoginForm h3 {
+    margin: 10px 10px 2px 10px;
+
+}
+
+.LoginForm .formLogin {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+.LoginForm .formLogin label {
+    padding: 2px 0px 2px 0px;
+    font-size: 1rem;
+    margin: 5px;
+
+}
+
+.LoginForm .formLogin input {
+    height: 30px;
+    padding: 5px 5px 5px 25px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 0.8rem;
+}
+
+.formLogin a {
+    font-size: 0.7rem;
+    text-decoration: none;
+    text-align: end;
+    padding: 5px;
+    margin: 2px 2px 0px 2px
+}
+
+.formLogin p {
+    font-size: 0.8rem;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+.formLogin span {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.formLogin button {
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 0.8rem;
+}
+
+.formLogin button:hover {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    color: #fff;
+}
+
+.LoginForm .slideControl {
+    position: relative;
+    display: flex;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    margin: 5px;
+    justify-content: space-around;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+}
+
+.LoginForm .sliderTab {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    left: 0;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.slideLabel {
+    z-index: 1;
+    color: orange;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.activeLogin {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    left: 0;
+    text-align: center;
+
+}
+
+.activeRegister {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    right: 0;
+    text-align: center;
+
+}
+
+
+.formLogin .BtnDaftar {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.formLogin .Telepon {
+    margin-bottom: 5px;
+}
+
+
+.formLogin .LoginIconLogin {
+    width: 15px;
+    position: absolute;
+    top: 37%;
+    left: 4%;
+}
+
+.formLogin .LoginIconLock {
+    width: 15px;
+    position: absolute;
+    top: 51%;
+    left: 4%;
+
+}
+
+.formLogin .LoginIconLockRegister {
+    width: 15px;
+    position: absolute;
+    top: 52%;
+    left: 4%;
+
+}
+
+.formLogin .LoginEyeRegister {
+    width: 15px;
+    position: absolute;
+    top: 51%;
+    right: 5%;
+
+}
+
+.formLogin .LoginEye {
+    width: 15px;
+    position: absolute;
+    top: 52.5%;
+    right: 5%;
+
+}
+
+.formLogin .LogoGoogle {
+    width: 20px;
+    margin-right: 5px;
+    margin-bottom: -5px;
+}
+
+.LogoUser {
+    position: absolute;
+    top: 28%;
+    left: 4%;
+}
+
+.LoginIconRegister {
+    position: absolute;
+    top: 39.5%;
+    left: 4%;
+}
+
+.LoginPhone {
+    position: absolute;
+    top: 67.5%;
+    left: 4%;
+}
+
+
+/* Media query */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .LoginForm {
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}

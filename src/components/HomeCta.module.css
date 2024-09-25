@@ -1,0 +1,86 @@
+.HomeCta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 200px;
+    background-color: white;
+    position: relative;
+    /* margin-top: 20px; */
+    left: 50%;
+    transform: translate(-50%, 100%);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -5px;
+}
+
+.HomeCta .controlCta {
+    background-color: bisque;
+    padding: 10px;
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.HomeCta .controlCta input {
+    border: none;
+    background-color: bisque;
+    width: 80%;
+    padding: 5px;
+    margin-right: 5px;
+
+}
+
+.HomeCta .controlCta .btnCta {
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8c5efc;
+    color: #fff;
+}
+
+.btnCta:hover {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+}
+
+@media screen and (max-width: 1200px) {
+    .HomeCta {
+        width: 90%;
+        padding: 10px;
+        transform: translate(-50%, 120%);
+    }
+
+    .HomeCta .controlCta {
+        background-color: #fff;
+    }
+
+    .HomeCta .controlCta input {
+
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+
+    }
+
+    .HomeCta .controlCta .btnCta {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 690px) {
+    .HomeCta {
+        transform: translate(-50%, 40%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .HomeCta {
+
+        font-size: 15px;
+        height: 250px;
+        transform: translate(-50%, 70%);
+    }
+}

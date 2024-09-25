@@ -1,0 +1,41 @@
+ .HeaderDua {
+     /* margin-top: 20px;
+      */
+
+     transform: translate(15%, 300%);
+     /* left: 15%; */
+     position: relative;
+ }
+
+ .HeaderDua p {
+     font-size: 0.8rem;
+     color: #fff;
+     padding-top: 5px;
+ }
+
+ @media screen and (max-width: 820px) {
+     .HeaderDua {
+         margin-top: 60px;
+         left: 15%;
+     }
+
+
+ }
+
+ @media screen and (max-width: 480px) {
+     .HeaderDua {
+         font-size: 15px;
+         transform: translate(0, 150%);
+     }
+
+
+ }
+
+ @media screen and (max-width: 1200px) {
+     .HeaderDua {
+         margin-bottom: -50px;
+         /* margin-top: 20px; */
+     }
+
+
+ }

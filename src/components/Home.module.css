@@ -4,53 +4,74 @@
     justify-content: center;
     align-items: center;
     width: 75%;
-    background-color: white;
-    padding: 10px 70px;
+    height: 300px;
+    background-image: linear-gradient(#000000b3, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url("./img/GambarBg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    /* margin-top: 20px; */
     left: 50%;
-    /* top: 50%; */
-    transform: translate(-50%, 50%);
+    padding: 10px;
+    transform: translate(-50%, 30%);
     border-radius: 10px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -5px;
+    gap: 30px;
 
 }
 
 .Home .HomeJudul {
     font-size: 2rem;
     padding: 5px;
-    margin: 10px;
     text-align: center;
-
+    color: #fff;
 }
 
-p {
+.Para {
     font-size: 0.9rem;
-    margin-bottom: 10px;
+    color: #fff;
 }
 
 .BTN {
     background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
     color: #fff;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 0.8rem;
+    height: 30px;
+    width: 50%;
+    border: none;
+    margin-top: 10px;
 }
 
 .BTN:hover {
-    background: #8c5efc;
+    background: #fff;
+    color: black;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 320px) {
     .Home {
-        width: 90%;
+        height: 100vh;
     }
 
+    .Home .HomeJudul {
+        font-size: 1.5rem;
+    }
+
+    .Home .BTN {
+        height: auto;
+        width: 100%;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 450px) {
     .Home {
-        transform: translate(-50%, 20%);
+        height: 100vh;
     }
 
+    .Home .BTN {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin-top: -10px;
+    }
 }

@@ -4,7 +4,9 @@ const HeaderDua = () => {
   return (
     <div className={styles.HeaderDua}>
       <h4>Koleksi Video Pembelajaran Unggulan</h4>
-      <p>Jelajahi Dunia Pengetahuan Melalui Platform kami!</p>
+      <p className={styles.ParagraphHeaderDua}>
+        Jelajahi Dunia Pengetahuan Melalui Platform kami!
+      </p>
     </div>
   );
 };

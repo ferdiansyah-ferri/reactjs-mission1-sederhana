@@ -1,13 +1,12 @@
 .Footer {
-    background: #fff;
+    background: beige;
     display: flex;
     justify-content: space-around;
     padding: 10px;
     height: 250px;
-    margin: 0px 10px;
-    transform: translate(0%, 70%);
+    transform: translate(0%, 100%);
     position: relative;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -5px;
+    width: auto;
 }
 
 .Footer ul {
@@ -70,7 +69,7 @@
 }
 
 .FooterAkhir {
-    background-image: linear-gradient(62deg, #8c5efc 0%, #e0c3fc 100%);
+    background-color: beige;
     height: 100px;
     width: 100%;
     position: absolute;
@@ -79,55 +78,27 @@
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 450px) {
     .Footer {
-        height: 200px;
-        font-size: 12px;
-        transform: translate(0, 100%);
-    }
-}
-
-@media screen and (max-width: 690px) {
-    .Footer {
-        transform: translate(0, 30%);
-        height: 250px;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .Footer .IconFooter {
-        margin-right: 5px;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .Footer {
+        height: auto;
+        width: auto;
         display: block;
-        height: 100%;
-        font-size: 20px;
-        /* margin-top: -50px; */
-        transform: translate(0%, 30%);
-
+        transform: translate(0, 70vh);
     }
 
     .Footer .Akhir {
         display: block;
         top: 100%;
-        padding: 10px 10px 10px 0px;
-        background-color: #fff;
     }
 
-    .Footer p {
-        padding-bottom: 20px;
+    .Footer .Akhir p {
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
     }
 
-    .FooterAkhir {
-        top: 100%;
-    }
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1200px) {
-    .Footer {
-        transform: translate(0%, 100%);
+    .Footer .IconFooter {
+        text-align: center;
+        margin-bottom: 20px;
     }
 }

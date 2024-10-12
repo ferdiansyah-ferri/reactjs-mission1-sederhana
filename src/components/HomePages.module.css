@@ -3,50 +3,48 @@
     margin: 0;
 }
 
+.HomePage {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    width: 100%;
+    min-height: 100vh;
+}
 
 
 .Container {
     width: 100%;
-    /* background-color: linear-gradient(62deg, #8c5efc 0%, #e0c3fc 100%); */
+    padding: 10px;
     z-index: 999;
-    background-color: #fff;
+    background-color: beige;
     position: fixed;
-    margin-bottom: 50px;
-    top: 0;
+
 }
 
 .Container .NavbarHeader {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid black;
+    width: 100%;
+    background-color: #0073e6;
 }
 
 .Container h2 {
-    color: rgb(209, 144, 23)
+    color: orange;
 }
 
 
 .Container a {
-    color: black;
+    color: #fff;
     text-decoration: none;
     padding: 5px 5px;
-
-
-}
-
-.Container .image {
-    display: flex;
-    margin-left: 100px;
+    font-style: italic;
+    font-size: 1.2rem;
 
 }
 
 .Container img {
-
     width: 50px;
     height: 50px;
-    border-radius: 50px;
-    border: 1px solid black;
+    border-radius: 20px;
     margin: 2px 0;
 }
 
@@ -55,6 +53,21 @@
     list-style: none;
     justify-content: space-between;
     width: 150%;
+}
+
+.BtnProduk {
+    font-size: 1.2rem;
+    border: none;
+    background: #0073e6;
+    font-style: italic;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.BtnProduk:hover {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    border-radius: 5px;
 }
 
 .Container ul li a:hover {
@@ -79,6 +92,7 @@
     opacity: 0;
     cursor: pointer;
     z-index: 2;
+    transform: translate(0, 0);
 
 }
 
@@ -91,8 +105,6 @@
     background-color: rgb(33, 35, 40);
     border-radius: 5px;
     transition: all 0.5s;
-
-
 }
 
 .Container .NavbarHeader .menuToggle span:nth-child(2) {
@@ -118,70 +130,128 @@
     transform: scale(0);
 }
 
-.Container .NavbarHeader .kategori {
+.dropDown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #fff;
+}
 
-    padding: 2px;
+.dropDown li {
+    font-size: 0.7rem;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
 
+.dropDown .DropLink {
+    color: black;
+    font-style: italic;
+    font-size: 0.7rem;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+}
 
+.dropDown .DropLink:hover {
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    color: #fff;
+    border-radius: 5px;
 }
 
 
+.LogOut {
+    position: absolute;
+    margin-left: 10px;
+}
 
+.CardSlider {
+    display: flex;
+    transform: translate(0, 20%);
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+}
+
+.CardContent {
+    width: 30%;
+    margin: 5px 10px;
+
+}
 
 
 /* Media Query */
 
-
-
-@media screen and (max-width: 1200px) {
-
-    .Container {
-        padding: 0px 10px;
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .Container .NavbarHeader {
+        width: 100%;
     }
 
-    .Container .NavbarHeader ul {
-        width: 120%;
-
+    .HomePage .CardSlider {
+        display: block;
+        transform: translate(-10%, 7%);
     }
+
+    .HomePage .CardContent {
+        width: 100%;
+    }
+
+
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 500px) {
     .Container .NavbarHeader .menuToggle {
         display: flex;
-        margin: auto;
     }
 
     .Container .NavbarHeader ul {
+        display: block;
+        z-index: -2;
         position: absolute;
-        right: 0;
-        top: 100%;
-        flex-direction: column;
-        background-color: white;
-        height: 300px;
-        width: 50%;
-        align-items: center;
-        justify-content: space-evenly;
         transition: all 1s;
-
-
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #0059b3;
+        width: 50%;
+        top: 100%;
+        text-align: center;
+        line-height: 60px;
     }
 
-    .Container .NavbarHeader .showMenu {
-        display: flex;
-        position: absolute;
-        z-index: 1;
+    .showMenu {
+        opacity: 1;
+        transform: translateX(-50%);
     }
 
-    .Container .NavbarHeader .hideMenu {
-        display: none;
+    .hideMenu {
+        opacity: 0;
+        transform: translateX(0);
     }
 
-
+    .dropDown {
+        transform: translateX(-50%);
+    }
 
 }
 
-@media screen and (max-width:450px) {
-    .Container .image {
-        margin: 0;
+@media screen and (min-width: 700px) and (max-width: 1200px) {
+    .Container .NavbarHeader ul {
+        width: 100%;
+    }
+
+    .CardSlider {
+        width: 100%;
+        transform: translate(0, 10%);
+    }
+
+    .CardContent {
+        width: 45%;
+    }
+
+    .dropDown {
+        left: 50%;
     }
 }

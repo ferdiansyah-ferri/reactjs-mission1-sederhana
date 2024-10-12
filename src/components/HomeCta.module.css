@@ -3,32 +3,46 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
-    height: 200px;
-    background-color: white;
-    position: relative;
-    /* margin-top: 20px; */
-    left: 50%;
-    transform: translate(-50%, 100%);
+    width: 80%;
+    height: 300px;
+    background-image: linear-gradient(#000000b3, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url("./img/GambarBg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translate(12%, 80%);
     border-radius: 10px;
-    margin-bottom: 50px;
+    gap: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -5px;
 }
 
+.JudulCta {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.JudulCta2 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.ParagraphCta {
+    color: #fff;
+}
+
 .HomeCta .controlCta {
-    background-color: bisque;
-    padding: 10px;
-    margin-top: 20px;
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    padding: 5px;
     width: 50%;
     border-radius: 10px;
 }
 
 .HomeCta .controlCta input {
     border: none;
-    background-color: bisque;
-    width: 80%;
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    width: 70%;
     padding: 5px;
     margin-right: 5px;
+    color: #fff;
 
 }
 
@@ -36,51 +50,44 @@
     padding: 5px;
     border: none;
     border-radius: 10px;
-    background-color: #8c5efc;
-    color: #fff;
+    background-color: #fff;
+    width: 20%;
+    font-weight: 700;
+
 }
 
 .btnCta:hover {
     background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    color: #fff;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 320px) and (max-width: 450px) {
     .HomeCta {
         width: 90%;
-        padding: 10px;
-        transform: translate(-50%, 120%);
+        padding: 5px;
+        transform: translate(5%, 90%);
+    }
+
+    .HomeCta .JudulCta {
+        font-size: 1.5rem;
+        margin-top: 5px;
+    }
+
+    .HomeCta .JudulCta2 {
+        font-size: 1rem;
     }
 
     .HomeCta .controlCta {
-        background-color: #fff;
+        width: 90%;
+        padding: 10px;
     }
 
     .HomeCta .controlCta input {
-
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 5px;
-        border-radius: 5px;
-
+        margin-bottom: 10px;
+        width: 95%;
     }
 
     .HomeCta .controlCta .btnCta {
         width: 100%;
-    }
-
-}
-
-@media screen and (max-width: 690px) {
-    .HomeCta {
-        transform: translate(-50%, 40%);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .HomeCta {
-
-        font-size: 15px;
-        height: 250px;
-        transform: translate(-50%, 70%);
     }
 }

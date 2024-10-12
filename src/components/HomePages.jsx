@@ -2,13 +2,20 @@ import avatar from "./img/avatar.jpg";
 import styles from "./HomePages.module.css";
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
+import { LogOut } from "feather-icons-react";
+import { useNavigate } from "react-router-dom";
 
 const HomePages = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  const navigate = useNavigate();
   return (
     <div className={styles.Container}>
       <div className={styles.NavbarHeader}>
@@ -36,23 +43,43 @@ const HomePages = () => {
             <li>
               <HashLink to="#Footer">Tentang kami</HashLink>
             </li>
-            <li>Kategori</li>
             <li>
-              <select name="" id="" className={styles.kategori}>
-                <option value="">Semua Kelas</option>
-                <option value="">Pengembangan Diri</option>
-                <option value="">Desain</option>
-                <option value="">Pemasaran</option>
-                <option value="">Bisnis</option>
-              </select>
+              <button
+                onClick={() => navigate("/semuaproduk")}
+                className={styles.BtnProduk}
+              >
+                Kategori
+              </button>
             </li>
           </ul>
         </div>
 
         <div className={styles.image}>
-          <a href="">
-            <img src={avatar} alt="" />
-          </a>
+          <img src={avatar} alt="Foto Profile" onClick={toggleMenu} />
+          {isOpen && (
+            <ul className={isOpen ? styles.dropDown : styles.hideDown}>
+              <li>
+                <button
+                  className={styles.DropLink}
+                  onClick={() => navigate("/profile")}
+                >
+                  Profile Saya
+                </button>
+              </li>
+              <li>
+                <button className={styles.DropLink}>Kelas Saya</button>
+              </li>
+              <li>
+                <button className={styles.DropLink}>Pesanan saya</button>
+              </li>
+              <li>
+                <button className={styles.DropLink}>
+                  Keluar
+                  <LogOut size={14} color="red" className={styles.LogOut} />
+                </button>
+              </li>
+            </ul>
+          )}
         </div>
       </div>
     </div>

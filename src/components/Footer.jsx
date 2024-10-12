@@ -84,7 +84,6 @@ const Footer = () => {
             </span>
           </div>
         </div>
-        <div className={styles.FooterAkhir}></div>
       </div>
     </>
   );

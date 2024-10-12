@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./Style.module.css";
 import FormCard from "./FormCard";
@@ -13,16 +13,19 @@ const LoginForm = () => {
     <>
       <div className={styles.LoginForm}>
         <h3>Login</h3>
-        <p>Yuk,lanjutin belajarmu di videobelajar.</p>
+        <p className={styles.ParagrapPembuka}>
+          Yuk,lanjutin belajarmu di videobelajar.
+        </p>
         <FormCard />
         <form action="#" className={styles.formLogin}>
           <label htmlFor="">E-mail :</label>
           <div className={styles.LoginIconLogin}>
             <Mail size={14} color="#ccc" />
           </div>
+
           <input type="text" placeholder="Masukan Email" required />
           <label htmlFor="">Password :</label>
-          <div className={styles.LoginIconLockRegister}>
+          <div className={styles.LoginIconLock}>
             <Lock size={14} color="#ccc" />
           </div>
           <div className={styles.LoginEye}>
@@ -30,9 +33,9 @@ const LoginForm = () => {
           </div>
           <input type="password" placeholder="Masukan Password" required />
           <a href="#">Lupa Password?</a>
-          <button onClick={() => navigate("/register")}>Login</button>
+          <button onClick={() => navigate("/homepage")}>Login</button>
           <p>
-            Belum Punya akun?<a href="#">Dafta Sekarang</a>
+            Belum Punya akun?<a href="#">Daftar Sekarang</a>
           </p>
           <span>atau</span>
           <button type="submit">

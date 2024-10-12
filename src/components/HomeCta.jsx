@@ -3,9 +3,9 @@ import styles from "./HomeCta.module.css";
 const HomeCta = () => {
   return (
     <div className={styles.HomeCta}>
-      <p>NEWSLETTER</p>
-      <h3>Mau Belajar Lebih Banyak?</h3>
-      <p>
+      <p className={styles.JudulCta}>NEWSLETTER</p>
+      <h3 className={styles.JudulCta2}>Mau Belajar Lebih Banyak?</h3>
+      <p className={styles.ParagraphCta}>
         Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran
         spesial dari program-program terbaik dari hariesok.id
       </p>

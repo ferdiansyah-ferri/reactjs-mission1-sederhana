@@ -16,27 +16,75 @@
 
 
 
- @media screen and (min-width: 370px) and (max-width: 470px) {
+ @media screen and (min-width: 330px) and (max-width: 390px) {
      .HeaderDua {
-         width: 80%;
-         transform: translate(-15%, -15vh);
+         width: auto;
+         transform: translate(-15%, -8vh);
      }
 
  }
 
 
- @media screen and (max-width: 325px) {
+ @media screen and (max-width: 320px) {
      .HeaderDua {
-         width: 80%;
+         width: auto;
          transform: translate(-15%, -15vh);
      }
 
  }
 
- @media screen and (min-width: 470px) and (max-width: 800px) {
+ @media screen and (min-width: 321px) and (max-width: 333px) {
      .HeaderDua {
-         width: 70%;
-         transform: translate(-10%, -30vh);
+         width: auto;
+         transform: translate(-15%, -5vh);
+     }
+ }
+
+
+ @media screen and (min-width: 390px) and (max-width: 403px) {
+     .HeaderDua {
+         width: auto;
+         transform: translate(-15%, -10vh);
+     }
+
+ }
+
+ @media screen and (min-width: 404px) and (max-width: 450px) {
+     .HeaderDua {
+         width: auto;
+         transform: translate(-15%, -15vh);
+     }
+
+ }
+
+ @media screen and (min-width: 451px) and (max-width: 476px) {
+     .HeaderDua {
+         width: auto;
+         transform: translate(-15%, -13vh);
+     }
+
+ }
+
+ @media screen and (min-width: 477px) and (max-width: 770px) {
+     .HeaderDua {
+         width: auto;
+         transform: translate(-15%, -20vh);
+     }
+
+ }
+
+ @media screen and (min-width: 600px) and (max-width: 1100px) {
+     .HeaderDua {
+         width: auto;
+         transform: translate(-15%, -30vh);
+     }
+
+ }
+
+ @media screen and (min-width: 1440px) and (max-width: 2560px) {
+     .HeaderDua {
+         width: auto;
+         transform: translate(-15%, -50vh);
      }
 
  }

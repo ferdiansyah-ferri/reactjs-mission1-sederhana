@@ -168,7 +168,7 @@
 }
 
 /* Media Query */
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 320px) and (max-width: 500px) {
     .Profile {
         width: 85%;
     }
@@ -179,21 +179,17 @@
 
     .profileKanan {
         position: absolute;
-        transform: translate(-5%, 30vh);
+        transform: translate(-1%, 30vh);
         width: 90%;
-        height: 100vh;
-    }
-
-    .imageProfile {
-        transform: translate(80%);
+        height: 50vh;
     }
 
     .Profile .profileKanan ul {
         display: flex;
         flex-direction: column;
         position: absolute;
-        transform: translate(-50%, 30vh);
-        height: 30%;
+        transform: translate(-85%, 15vh);
+        height: 20%;
         justify-content: space-evenly;
     }
 
@@ -212,7 +208,7 @@
     }
 
     .FooterProfile {
-        transform: translate(0, 70vh);
+        transform: translate(0, 10vh);
         position: absolute;
         z-index: -10;
     }
@@ -226,7 +222,7 @@
     }
 
     .Profile .profileKanan ul {
-        left: 60%;
+        left: 70%;
     }
 
     .profileForm {
@@ -249,4 +245,24 @@
 
     }
 
+}
+
+@media screen and (min-width: 320px) and (max-width: 350px) {
+    .Profile .profileKanan ul {
+        transform: translate(-65%, 15vh);
+    }
+
+    .profileKanan {
+        transform: translate(-5%, 30vh);
+    }
+}
+
+@media screen and (min-width: 351px) and (max-width: 410px) {
+    .Profile .profileKanan ul {
+        transform: translate(-70%, 15vh);
+    }
+
+    .profileKanan {
+        transform: translate(-5%, 30vh);
+    }
 }

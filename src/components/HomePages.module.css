@@ -181,6 +181,10 @@
 
 }
 
+.FooterHomePage {
+    background-color: aqua;
+}
+
 
 /* Media Query */
 
@@ -253,5 +257,15 @@
 
     .dropDown {
         left: 50%;
+    }
+}
+
+@media screen and (min-width: 475px) and (max-width: 770px) {
+    .CardSlider {
+        transform: translate(-5%, 7%);
+    }
+
+    .CardContent {
+        width: auto;
     }
 }

@@ -325,7 +325,7 @@ input[type="radio"] {
     }
 
     .buttonReset {
-        transform: translate(45vh, -4vh);
+        transform: translate(23vh, -2vh);
         background-color: #0073e6;
     }
 
@@ -336,9 +336,9 @@ input[type="radio"] {
     }
 
     .Card {
-        transform: translate(-15%, 70%);
-        width: 70vh;
-        height: 100vh;
+        transform: translate(-15%, 80%);
+        width: 35vh;
+        height: 50vh;
         font-size: 0.8rem;
         padding: 0;
         overflow: hidden;
@@ -346,10 +346,9 @@ input[type="radio"] {
 
 
     .FooterProduk {
-        transform: translate(0, 100vh);
+        transform: translate(0, 40vh);
         position: absolute;
         z-index: -10;
-        margin-top: 20px;
     }
 
     .TrackContainer {
@@ -382,12 +381,9 @@ input[type="radio"] {
     .Card {
         position: absolute;
         width: 90%;
-        height: 100vh;
+        height: 50vh;
         transform: translate(0, 80%);
         font-size: 0.8rem;
     }
 
-    .FooterProduk {
-        margin-top: 20px;
-    }
 }

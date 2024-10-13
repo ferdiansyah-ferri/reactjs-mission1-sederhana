@@ -179,7 +179,7 @@
 
     .profileKanan {
         position: absolute;
-        transform: translate(-5%, 60vh);
+        transform: translate(-5%, 30vh);
         width: 90%;
         height: 100vh;
     }
@@ -212,7 +212,7 @@
     }
 
     .FooterProfile {
-        transform: translate(0, 100vh);
+        transform: translate(0, 70vh);
         position: absolute;
         z-index: -10;
     }

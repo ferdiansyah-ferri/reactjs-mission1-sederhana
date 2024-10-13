@@ -62,7 +62,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 450px) {
     .Home {
-        height: 100vh;
+        height: 10%;
     }
 
     .Home .BTN {

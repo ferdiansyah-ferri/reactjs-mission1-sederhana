@@ -22,7 +22,7 @@
  @media screen and (min-width: 320px) and (max-width: 400px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, -150%);
+         transform: translate(-15%, -50%);
      }
 
  }

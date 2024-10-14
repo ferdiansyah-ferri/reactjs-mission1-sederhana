@@ -314,8 +314,8 @@ input[type="radio"] {
     }
 
     .HeaderDuaProduk {
-        transform: translate(-5%, 150%);
-        width: 80%;
+        transform: translate(0%, 100%);
+        width: 100%;
     }
 
     .filterContainer {
@@ -387,4 +387,14 @@ input[type="radio"] {
         font-size: 0.8rem;
     }
 
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+    .HeaderDuaProduk {
+        transform: translate(0%, 250%);
+    }
+
+    .Card {
+        width: 80%;
+    }
 }

@@ -19,7 +19,7 @@
  @media screen and (min-width: 330px) and (max-width: 390px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, 70vh);
+         transform: translate(-15%, 30vh);
      }
 
  }
@@ -36,7 +36,7 @@
  @media screen and (min-width: 325px) and (max-width: 335px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, 70vh);
+         transform: translate(-15%, 30vh);
      }
  }
 
@@ -44,7 +44,7 @@
  @media screen and (min-width: 390px) and (max-width: 403px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, 60vh);
+         transform: translate(-15%, 30vh);
      }
 
  }
@@ -52,7 +52,7 @@
  @media screen and (min-width: 404px) and (max-width: 450px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, 50vh);
+         transform: translate(-15%, 20vh);
      }
 
  }
@@ -60,7 +60,7 @@
  @media screen and (min-width: 451px) and (max-width: 476px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, 60vh);
+         transform: translate(-15%, 20vh);
      }
 
  }
@@ -68,7 +68,7 @@
  @media screen and (min-width: 477px) and (max-width: 770px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, 50vh);
+         transform: translate(-15%, 10vh);
      }
 
  }
@@ -76,7 +76,7 @@
  @media screen and (min-width: 600px) and (max-width: 1100px) {
      .HeaderDua {
          width: 80%;
-         transform: translate(-15%, 30vh);
+         transform: translate(-15%, 0vh);
      }
 
  }

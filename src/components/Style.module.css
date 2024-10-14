@@ -398,7 +398,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 400px) {
     .LoginForm .slideControl {
-        height: 40px;
+        height: auto;
     }
 
     .LoginForm .sliderTab {

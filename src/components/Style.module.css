@@ -384,6 +384,7 @@
 @media screen and (max-width: 400px) {
     .LoginForm {
         width: 90%;
+        height: 50vh;
     }
 
 }
@@ -393,4 +394,29 @@
         width: 90%;
     }
 
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+    .LoginForm .slideControl {
+        height: 40px;
+    }
+
+    .LoginForm .sliderTab {
+        align-items: center;
+    }
+
+    .LoginForm .LoginIconLogin {
+        top: 41.5%;
+        left: 4%;
+    }
+
+    .LoginForm .LoginIconLock {
+        top: 56%;
+        left: 4%;
+    }
+
+    .LoginForm .LoginEye {
+        top: 56%;
+        right: 5%;
+    }
 }

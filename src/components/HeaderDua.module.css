@@ -16,16 +16,10 @@
 
 
 
- @media screen and (min-width: 330px) and (max-width: 390px) {
-     .HeaderDua {
-         width: 80%;
-         transform: translate(-15%, -50%);
-     }
-
- }
 
 
- @media screen and (max-width: 320px) {
+
+ @media screen and (min-width: 320px) and (max-width: 400px) {
      .HeaderDua {
          width: 80%;
          transform: translate(-15%, -150%);
@@ -33,21 +27,7 @@
 
  }
 
- @media screen and (min-width: 325px) and (max-width: 335px) {
-     .HeaderDua {
-         width: 80%;
-         transform: translate(-15%, 30vh);
-     }
- }
 
-
- @media screen and (min-width: 390px) and (max-width: 403px) {
-     .HeaderDua {
-         width: 80%;
-         transform: translate(-15%, 30vh);
-     }
-
- }
 
  @media screen and (min-width: 404px) and (max-width: 450px) {
      .HeaderDua {

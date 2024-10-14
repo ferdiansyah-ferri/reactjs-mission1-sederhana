@@ -1,8 +1,7 @@
 .LoginPage {
     background-color: beige;
     width: 100%;
-    /* height: 600px; */
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .LoginForm {
@@ -192,8 +191,7 @@
 .RegisterForm {
     background: beige;
     width: 100%;
-    /* height: 700px; */
-    min-height: 100vh;
+    height: 100vh;
 
 }
 

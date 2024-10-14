@@ -384,7 +384,7 @@
 @media screen and (max-width: 400px) {
     .LoginForm {
         width: 90%;
-        height: 50vh;
+        height: 50%;
     }
 
 }

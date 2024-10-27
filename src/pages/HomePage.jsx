@@ -10,9 +10,12 @@ import Gambar1 from "../components/img/gmbar1.jpg";
 import Gambar2 from "../components/img/gmbar2.jpg";
 import Avatar from "../components/img/avatar.jpg";
 import Rating from "../components/Rating";
+import api from "../services/api";
+
 const HomePage = () => {
   const cardsData = [
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -20,10 +23,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 350K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -31,10 +34,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 350K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -42,10 +45,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 350K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -53,10 +56,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 250K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -64,10 +67,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 250K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -75,10 +78,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 250K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -86,10 +89,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 300K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -97,10 +100,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 300K",
     },
     {
+      icon: <Rating totalStars={5} />,
       title: "Big 4 Auditor Financial Analyst",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,cupiditate necessitatibus dicta ipsa molestias quidem.",
@@ -108,10 +111,10 @@ const HomePage = () => {
       Avatar: Avatar,
       nama: "Peri Perdiansah",
       nameRq: "Senior Accountan di Gojek",
-      icon: <Rating totalStars={5} />,
       Harga: "Rp. 300K",
     },
   ];
+
   return (
     <>
       <div className={styles.HomePage}>
@@ -119,8 +122,8 @@ const HomePage = () => {
         <Home />
         <HeaderDua />
         <div className={styles.CardSlider}>
-          {cardsData.map((card, index) => (
-            <div key={index} className={styles.CardContent}>
+          {cardsData.map((card) => (
+            <div key={card.id} className={styles.CardContent}>
               <Card {...card} />
             </div>
           ))}

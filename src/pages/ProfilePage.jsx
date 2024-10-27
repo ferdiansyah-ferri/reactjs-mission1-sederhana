@@ -6,7 +6,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { User, Layout, Briefcase } from "feather-icons-react";
 import { useDropzone } from "react-dropzone";
-
+import axios from "axios";
+import api from "../services/api";
 const customStyles = {
   content: {
     top: "50%",
@@ -64,169 +65,192 @@ const ProfilePage = () => {
     setIsOpen(false);
   }
   const [buttonColor, setButtonColor] = useState("blue");
-  const [userData, setUserData] = useState(
-    JSON.parse(localStorage.getItem("userData")) || {}
-  );
+  const userId = localStorage.getItem("userId");
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+  });
   useEffect(() => {
-    const storedData = localStorage.getItem("userData");
-    if (storedData) {
-      setUserData(JSON.parse(storedData));
-    }
-  }, []);
-  const handleChange = (event) => {
-    setUserData((prevData) => ({
-      ...prevData,
-      [event.target.name]: event.target.value,
-    }));
+    const fetchUserData = async () => {
+      if (userId) {
+        try {
+          const response = await api.get(`/users/${userId}?v=${Date.now()}`);
+          setUserData(response.data);
+        } catch (error) {
+          console.error("Terjadi Kesalahan Saat Memuat data:", error);
+        }
+      }
+    };
+    fetchUserData();
+  }, [userId]);
+
+  const handleChange = (e) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    localStorage.setItem("userData", JSON.stringify(userData) || {});
-    alert("Data berhasil disimpan!");
-    setButtonColor("red");
+    try {
+      const response = await api.put(`/users/${userId}`, userData);
+      alert("Data Profile Berhasil diperbaharui:", response.data);
+      setButtonColor("red");
+    } catch (error) {
+      console.error("terjadi Kesalahan saat memperbaharui data", error);
+    }
   };
 
   // Delete Profile start
-  const handleHapusProfile = () => {
-    if (window.confirm("Apakah Anda Yakin Ingin Menghapus Profil Anda?")) {
-      localStorage.removeItem("userData");
-      localStorage.removeItem("profilePicture");
-      setUserData({});
-      alert("Profile Berhasil dihapus!");
+  const handleHapusProfile = async () => {
+    try {
+      await api.delete(`/users/${userId}`);
+      const confirmed = window.confirm(
+        "Apakah Anda Yakin Ingin Menghapus Profil Anda?"
+      );
+      if (confirmed) {
+        localStorage.removeItem("profilePicture");
+        setUserData(null);
+        alert("Profile Berhasil dihapus!");
+      }
+    } catch (error) {
+      console.error("Terjadi Kesalahan Saat menghapus Profile:", error);
+      alert("gagal Menghapus Profile!");
     }
   };
   // Delete Profile End
 
   return (
     <>
-      <div className={styles.ProfilePage}>
-        <div className={styles.HomePagesProfile}>
-          <HomePages />
-        </div>
-
-        <div className={styles.Profile}>
-          <div className={styles.profileKiri}>
-            <h4>Ubah Profile</h4>
-            <span>ubah data diri anda</span>
-            <ul className={styles.profileJudul}>
-              <li>
-                <User size={12} /> <a href="">Profile Saya</a>
-              </li>
-              <li>
-                <Layout size={12} /> <a href="">Kelas Saya</a>
-              </li>
-              <li>
-                <Briefcase size={12} /> <a href="">Pesanan saya</a>
-              </li>
-            </ul>
+      {userData ? (
+        <div className={styles.ProfilePage}>
+          <div className={styles.HomePagesProfile}>
+            <HomePages />
           </div>
-          <div className={styles.profileKanan}>
-            <img
-              src={profilePicture || avatar}
-              alt="Profile Picture"
-              className={styles.imageProfile}
-            />
-            <ul>
-              <li>
-                <h5> {userData.nama}</h5>
-              </li>
-              <li>
-                <span>{userData.email}</span>
-              </li>
-              <li>
-                <span>{userData.noTelp}</span>
-              </li>
-              <li>
-                <button className={styles.buttonGanti} onClick={openModal}>
-                  Ganti Foto Profil
-                </button>
-              </li>
-              <li>
-                <button
-                  className={styles.buttonGanti}
-                  onClick={handleHapusProfile}
+
+          <div className={styles.Profile}>
+            <div className={styles.profileKiri}>
+              <h4>Ubah Profile</h4>
+              <span>ubah data diri anda</span>
+              <ul className={styles.profileJudul}>
+                <li>
+                  <User size={12} /> <a href="">Profile Saya</a>
+                </li>
+                <li>
+                  <Layout size={12} /> <a href="">Kelas Saya</a>
+                </li>
+                <li>
+                  <Briefcase size={12} /> <a href="">Pesanan saya</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.profileKanan}>
+              <img
+                src={profilePicture || avatar}
+                alt="Profile Picture"
+                className={styles.imageProfile}
+              />
+
+              <ul>
+                <li>
+                  <h5> {userData.name}</h5>
+                </li>
+                <li>
+                  <span>{userData.email}</span>
+                </li>
+                <li>
+                  <span>{userData.phoneNumber}</span>
+                </li>
+                <li>
+                  <button className={styles.buttonGanti} onClick={openModal}>
+                    Ganti Foto Profil
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className={styles.buttonGanti}
+                    onClick={handleHapusProfile}
+                  >
+                    Hapus Profile
+                  </button>
+                </li>
+                <Modal
+                  appElement={document.getElementById("root")}
+                  isOpen={modalIsOpen}
+                  onAfterOpen={afterOpenModal}
+                  onRequestClose={closeModal}
+                  style={customStyles}
+                  contentLabel="Example Modal"
                 >
-                  Hapus Profile
-                </button>
-              </li>
-              <Modal
-                appElement={document.getElementById("root")}
-                isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-              >
-                <div {...getRootProps()}>
-                  <input {...getInputProps()} />
-                  <p className={styles.ParagraphModal}>
-                    Drag 'n' drop some files here, or click to select files
-                  </p>
+                  <div {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <p className={styles.ParagraphModal}>
+                      Drag 'n' drop some files here, or click to select files
+                    </p>
+                  </div>
+                  <input
+                    id="myInput"
+                    type="file"
+                    onChange={handleFileChange}
+                    className={styles.FileInput}
+                  />
+                  <button onClick={handleUpload} disabled={loading}>
+                    {loading ? "mengunggah..." : "upload"}
+                  </button>
+                  {isUploaded && (
+                    <p className={styles.ButtonTrue}>
+                      Berhasil Mengunggah Foto Profil!
+                    </p>
+                  )}
+                </Modal>
+              </ul>
+              <form onSubmit={handleSubmit} className={styles.profileForm}>
+                <div className={styles.LabelProfile}>
+                  <label htmlFor="">Nama :</label>
+                  <label htmlFor="">E-mail :</label>
+                  <label htmlFor="">No.Hp :</label>
                 </div>
                 <input
-                  id="myInput"
-                  type="file"
-                  onChange={handleFileChange}
-                  className={styles.FileInput}
-                />
-                <button onClick={handleUpload} disabled={loading}>
-                  {loading ? "mengunggah..." : "upload"}
+                  type="text"
+                  name="name"
+                  placeholder="Nama Lengkap"
+                  value={userData.name}
+                  className={styles.InputEdit}
+                  onChange={handleChange}
+                ></input>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={userData.email}
+                  className={styles.InputEdit}
+                  onChange={handleChange}
+                ></input>
+
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  placeholder="No Hp"
+                  value={userData.phoneNumber}
+                  className={styles.InputEdit}
+                  onChange={handleChange}
+                ></input>
+                <button
+                  style={{ backgroundColor: buttonColor }}
+                  type="submit"
+                  className={styles.buttonProfile}
+                >
+                  Simpan
                 </button>
-                {isUploaded && (
-                  <p className={styles.ButtonTrue}>
-                    Berhasil Mengunggah Foto Profil!
-                  </p>
-                )}
-              </Modal>
-            </ul>
-            <form onSubmit={handleSubmit} className={styles.profileForm}>
-              <div className={styles.LabelProfile}>
-                <label htmlFor="">Nama :</label>
-                <label htmlFor="">E-mail :</label>
-                <label htmlFor="">No.Hp :</label>
-              </div>
-              <input
-                type="text"
-                name="nama"
-                placeholder="Nama Lengkap"
-                value={userData.nama}
-                onChange={handleChange}
-                className={styles.InputEdit}
-              ></input>
-
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={userData.email}
-                onChange={handleChange}
-                className={styles.InputEdit}
-              ></input>
-
-              <input
-                type="text"
-                name="noTelp"
-                placeholder="No Hp"
-                value={userData.noTelp}
-                onChange={handleChange}
-                className={styles.InputEdit}
-              ></input>
-              <button
-                style={{ backgroundColor: buttonColor }}
-                type="submit"
-                className={styles.buttonProfile}
-              >
-                Simpan
-              </button>
-            </form>
+              </form>
+            </div>
+          </div>
+          <div className={styles.FooterProfile}>
+            <Footer />
           </div>
         </div>
-        <div className={styles.FooterProfile}>
-          <Footer />
-        </div>
-      </div>
+      ) : (
+        <p>Sedang Memuat Data...</p>
+      )}
     </>
   );
 };

@@ -1,0 +1,107 @@
+.NavbarDsg {
+    background-color: #fff;
+    /* width: 100%; */
+    padding: 10px;
+    display: flex;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.imgDsg {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.ButtonDsg {
+    right: 10%;
+    position: absolute;
+    background: #fff;
+    border: none;
+}
+
+.JudulDsg {
+    display: block;
+    height: 50px;
+    padding: 20px;
+
+}
+
+.JudulP {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.JudulPage {
+    display: flex;
+
+    /* align-items: center; */
+    background-image: linear-gradient(#000000b3, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url("../img/GambarBg1.jpg");
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding: 20px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.ContentPage {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.Deskripsi {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 10px;
+    margin: 20px;
+    height: 200px;
+    border: 1px solid #ccc;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+.ContainerTutor {
+    background-color: bisque;
+    width: 60%;
+    padding: 10px;
+    margin: 20px;
+    font-size: 0.8rem;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.ContainerCard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.CardTutor {
+    width: 40%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.dataTutorImage {
+    display: flex;
+    /* background-color: aqua; */
+    margin-top: 5px;
+}
+
+.NamaTutor {
+    list-style: none;
+    margin-left: 10px;
+}

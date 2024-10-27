@@ -376,12 +376,24 @@
     left: 4%;
 }
 
+.errorMessage {
+    color: #23ff00;
+    font-size: 0.9rem;
+    position: absolute;
+    transform: translate(0, 35vh);
+
+}
+
 
 
 /* Media query */
 @media screen and (max-width: 400px) {
     .LoginForm {
         width: 90%;
+    }
+
+    .errorMessage {
+        transform: translate(0, 23vh);
     }
 
 }
@@ -391,4 +403,14 @@
         width: 90%;
     }
 
+}
+
+@media screen and (min-width: 380px) and (max-width: 440px) {
+    .HalamanReg {
+        width: 80%;
+    }
+
+    .errorMessage {
+        transform: translate(0, 23vh);
+    }
 }
